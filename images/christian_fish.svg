@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 60" width="100" height="60">
+  <!-- Christian fish symbol (Ichthys) - clean, simple design -->
+  <path d="M 10 30 Q 30 10, 50 30 Q 70 10, 90 30 Q 70 50, 50 30 Q 30 50, 10 30 Z" 
+        fill="none" 
+        stroke="#54d6dc" 
+        stroke-width="3" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"/>
+  
+  <!-- Eye -->
+  <circle cx="25" cy="30" r="3" fill="#54d6dc"/>
+</svg>

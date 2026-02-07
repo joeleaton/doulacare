@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="100" viewBox="0 0 400 100">
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#54d6dc" stop-opacity="1" />
+      <stop offset="100%" stop-color="#3ab5bc" stop-opacity="1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Heart symbol -->
+  <path d="M 35 30 C 35 20, 25 15, 20 15 C 12 15, 5 22, 5 30 C 5 42, 20 55, 35 65 C 50 55, 65 42, 65 30 C 65 22, 58 15, 50 15 C 45 25, 35 20, 35 30 Z" 
+        fill="url(#logoGradient)" 
+        opacity="0.9"/>
+  
+  <!-- DoulaCare text -->
+  <text x="80" y="50" font-family="Georgia,serif" font-size="36" font-weight="600" fill="#2c3e50">Doula<tspan fill="#54d6dc">Care</tspan></text>
+  
+  <!-- Tagline - NO letter-spacing for Chrome compatibility -->
+  <text x="80" y="72" font-family="Arial,sans-serif" font-size="11" fill="#5a6c7d">S U P P O R T I N G   Y O U R   J O U R N E Y</text>
+</svg>
