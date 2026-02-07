@@ -1,0 +1,71 @@
+LOGO NOT SHOWING ON LIVE SITE - FIX INSTRUCTIONS
+================================================
+
+The logo works locally but not on your live server. This is a MIME type issue.
+
+SOLUTION 1: Upload .htaccess file (RECOMMENDED)
+-----------------------------------------------
+1. Upload the .htaccess file to your root directory (same level as index.html)
+2. This tells your server to serve SVG files correctly
+3. Clear your browser cache
+4. Logo should now appear
+
+If your server doesn't support .htaccess or it still doesn't work:
+
+
+SOLUTION 2: Use PNG version instead
+-----------------------------------
+Since SVG isn't working on your server, use a PNG image instead:
+
+Step 1: Convert the logo to PNG
+   - Open images/doulacare_logo.svg in a browser
+   - Take a screenshot or use an online converter
+   - Save as: doulacare_logo.png (400px wide, 100px tall)
+   - Or use this command if you have ImageMagick:
+     convert images/doulacare_logo.svg -resize 400x100 images/doulacare_logo.png
+
+Step 2: Update ALL HTML files
+   Change this line in EVERY .html file:
+   
+   FROM:
+   <img src="images/doulacare_logo.svg" alt="DoulaCare logo with heart symbol" class="logo">
+   
+   TO:
+   <img src="images/doulacare_logo.png" alt="DoulaCare logo with heart symbol" class="logo">
+   
+   Files to update:
+   - index.html
+   - about.html
+   - services.html
+   - what-is-a-doula.html
+   - facts.html
+   - faq.html
+   - testimonials.html
+   - contact.html
+
+Step 3: Upload
+   - Upload the new doulacare_logo.png to images/ folder
+   - Re-upload all the HTML files
+   - Clear cache and refresh
+
+
+SOLUTION 3: Check server settings
+---------------------------------
+Contact your hosting provider and ask them to:
+1. Enable SVG MIME type (image/svg+xml)
+2. Or ask if .htaccess files are supported
+
+
+QUICK TEST
+----------
+After uploading .htaccess:
+1. Visit: https://doulacare.net/images/doulacare_logo.svg
+2. Should see the logo displayed
+3. If you see XML code instead, MIME type still not working
+4. Use PNG solution instead
+
+
+WHICH SOLUTION?
+--------------
+- Try Solution 1 (.htaccess) first - easiest
+- If that doesn't work, use Solution 2 (PNG) - guaranteed to work
