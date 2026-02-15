@@ -30,7 +30,7 @@ layout: default
 
           {% for testimonial in cat_testimonials %}
           {% if testimonial.image and testimonial.image != "" %}
-          <img src="{{ testimonial.image }}" alt="{{ testimonial.name }}" class="testimonial-image">
+          <img src="{{ testimonial.image | relative_url }}" alt="{{ testimonial.name }}" class="testimonial-image">
           {% endif %}
           <h3>{{ testimonial.name }}</h3>
           <blockquote class="testimonial">
