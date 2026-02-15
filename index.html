@@ -12,13 +12,13 @@ og_image: "/images/home_image.jpg"
 {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "https://doulacare.net",
+  "@id": "{{ '/' | absolute_url }}",
   "name": "DoulaCare",
   "description": "Professional birth doula services providing support throughout pregnancy, birth and postnatal care in Sussex and Surrey",
-  "url": "https://doulacare.net",
+  "url": "{{ '/' | absolute_url }}",
   "telephone": "07706-018115",
   "email": "info@doulacare.net",
-  "image": "https://doulacare.net/images/doulacare_logo.svg",
+  "image": "{{ '/images/doulacare_logo.svg' | absolute_url }}",
   "priceRange": "£75-£900",
   "areaServed": [
     {"@type": "City", "name": "Crawley"},

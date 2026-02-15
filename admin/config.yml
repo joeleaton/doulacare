@@ -3,8 +3,8 @@ backend:
   repo: joeleaton/doulacare
   branch: main
 
-site_url: https://doulacare.net
-display_url: https://doulacare.net
+site_url: https://joeleaton.github.io/doulacare
+display_url: https://joeleaton.github.io/doulacare
 
 media_folder: "images"
 public_folder: "/images"

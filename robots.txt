@@ -1,4 +1,6 @@
-# Robots.txt for DoulaCare.net
+---
+---
+# Robots.txt for DoulaCare
 # This file tells search engines how to crawl the site
 
 # Allow all search engines to crawl everything
@@ -6,7 +8,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://doulacare.net/sitemap.xml
+Sitemap: {{ '/sitemap.xml' | absolute_url }}
 
 # Crawl-delay (optional - gives servers a break)
 # Most modern crawlers ignore this, but doesn't hurt
