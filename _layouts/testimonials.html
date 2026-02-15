@@ -1,0 +1,126 @@
+---
+layout: default
+---
+
+{% assign categories = "birth-stories,dads,single-mums,breastfeeding,home-birth,c-section,postnatal,vbac,birth-prep" | split: "," %}
+{% assign category_labels = "Birth Stories,Dads,Single Mums,Breastfeeding,Home Birth,C-Section,Postnatal,VBAC,Birth Prep" | split: "," %}
+{% assign category_headings = "Birth Stories,What Partners Say,Support for Single Mothers,Breastfeeding Support,Home Birth Experiences,Caesarean Birth Support,Postnatal Support,VBAC Success Stories,Birth Preparation Sessions" | split: "," %}
+
+<main id="main-content" role="main">
+  <div class="container">
+    <div class="content-grid single-column">
+      <article class="main-content">
+
+        <h1>{{ page.title }}</h1>
+
+        <p class="lead">{{ page.lead }}</p>
+
+        <!-- Tab Navigation -->
+        <div class="testimonial-tabs" role="tablist">
+          {% for cat in categories %}
+          <button class="tab-button{% if forloop.first %} active{% endif %}" onclick="openTab(event, '{{ cat }}')" role="tab" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}">{{ category_labels[forloop.index0] }}</button>
+          {% endfor %}
+        </div>
+
+        <!-- Tab Content -->
+        {% for cat in categories %}
+        {% assign cat_testimonials = site.testimonials | where: "category", cat | sort: "order" %}
+        <div id="{{ cat }}" class="tab-content{% if forloop.first %} active{% endif %}" role="tabpanel">
+          <h2>{{ category_headings[forloop.index0] }}</h2>
+
+          {% for testimonial in cat_testimonials %}
+          {% if testimonial.image and testimonial.image != "" %}
+          <img src="{{ testimonial.image }}" alt="{{ testimonial.name }}" class="testimonial-image">
+          {% endif %}
+          <h3>{{ testimonial.name }}</h3>
+          <blockquote class="testimonial">
+            {{ testimonial.content }}
+          </blockquote>
+          {% endfor %}
+        </div>
+        {% endfor %}
+
+        <div class="card mt-3">
+          <h3>Ready to Experience This Support?</h3>
+          <p>If you'd like to join these families in having a positive, supported birth experience, I'd love to hear from you.</p>
+        </div>
+
+        <div class="text-center mt-3">
+          <a href="/contact.html" class="btn">Book Your Free Consultation</a>
+          <a href="/services.html" class="btn btn-secondary">View Services</a>
+        </div>
+
+      </article>
+    </div>
+  </div>
+</main>
+
+<style>
+  .testimonial-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 1rem;
+  }
+  .tab-button {
+    background: var(--white);
+    border: 2px solid var(--primary-light);
+    color: var(--text-dark);
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px 8px 0 0;
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+    font-size: 1rem;
+  }
+  .tab-button:hover {
+    background: var(--accent-color);
+    border-color: var(--primary-color);
+  }
+  .tab-button.active {
+    background: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+  }
+  .tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease-in;
+  }
+  .tab-content.active {
+    display: block;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @media (max-width: 768px) {
+    .testimonial-tabs {
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .tab-button {
+      width: 100%;
+      border-radius: 8px;
+    }
+  }
+</style>
+
+<script>
+  function openTab(evt, tabName) {
+    var tabcontent = document.getElementsByClassName("tab-content");
+    for (var i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].classList.remove("active");
+    }
+    var tabbuttons = document.getElementsByClassName("tab-button");
+    for (var i = 0; i < tabbuttons.length; i++) {
+      tabbuttons[i].classList.remove("active");
+      tabbuttons[i].setAttribute("aria-selected", "false");
+    }
+    document.getElementById(tabName).classList.add("active");
+    evt.currentTarget.classList.add("active");
+    evt.currentTarget.setAttribute("aria-selected", "true");
+    document.getElementById(tabName).scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+</script>

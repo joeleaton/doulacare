@@ -1,0 +1,33 @@
+# DoulaCare Jekyll Configuration
+title: "DoulaCare"
+description: "Professional birth doula services in West Sussex, East Sussex & Surrey"
+url: "https://doulacare.net"
+baseurl: ""
+
+# Site metadata
+author: "Laureen Eaton"
+email: "info@doulacare.net"
+phone: "07706 018115"
+location: "Crawley, West Sussex"
+
+# Collections
+collections:
+  testimonials:
+    output: false
+
+# Build settings
+markdown: kramdown
+permalink: /:basename:output_ext
+
+# Include admin directory for CMS
+include:
+  - admin
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LOGO_FIX_INSTRUCTIONS.txt
+  - .ftpquota
+  - .htaccess

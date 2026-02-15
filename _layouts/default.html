@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include head.html %}
+  {% if page.schema %}
+  {{ page.schema }}
+  {% endif %}
+  {% if page.extra_css %}
+  <style>
+    {{ page.extra_css }}
+  </style>
+  {% endif %}
+</head>
+
+<body>
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+  {% include header.html %}
+
+  {{ content }}
+
+  {% include footer.html %}
+
+  <script src="/js/main.js"></script>
+  {% if page.extra_js %}
+  <script>
+    {{ page.extra_js }}
+  </script>
+  {% endif %}
+</body>
+</html>

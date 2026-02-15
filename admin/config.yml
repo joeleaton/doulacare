@@ -1,0 +1,171 @@
+backend:
+  name: github
+  repo: joeleaton/doulacare
+  branch: main
+
+site_url: https://doulacare.net
+display_url: https://doulacare.net
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  # ========================================
+  # TESTIMONIALS
+  # Easy to add new testimonials with category selection
+  # ========================================
+  - name: "testimonials"
+    label: "Testimonials"
+    label_singular: "Testimonial"
+    folder: "_testimonials"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    icon: "format_quote"
+    description: "Client testimonials organized by category. Add new testimonials and assign them to a category."
+    sortable_fields:
+      fields: ["name", "category", "order"]
+      default:
+        field: "order"
+    summary: "{{name}} — {{category}}"
+    editor:
+      preview: false
+    fields:
+      - label: "Client Name"
+        name: "name"
+        widget: "string"
+        hint: "Full name as it should appear (e.g. 'Sarah, Wayne, and baby William')"
+
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        hint: "Choose the testimonial category"
+        options:
+          - { label: "Birth Stories", value: "birth-stories" }
+          - { label: "Dads/Partners", value: "dads" }
+          - { label: "Single Mums", value: "single-mums" }
+          - { label: "Breastfeeding", value: "breastfeeding" }
+          - { label: "Home Birth", value: "home-birth" }
+          - { label: "C-Section", value: "c-section" }
+          - { label: "Postnatal", value: "postnatal" }
+          - { label: "VBAC", value: "vbac" }
+          - { label: "Birth Prep", value: "birth-prep" }
+
+      - label: "Photo"
+        name: "image"
+        widget: "image"
+        required: false
+        hint: "Optional client/family photo"
+
+      - label: "Display Order"
+        name: "order"
+        widget: "number"
+        required: false
+        default: 10
+        hint: "Lower numbers appear first within the category"
+
+      - label: "Testimonial Text"
+        name: "body"
+        widget: "markdown"
+        hint: "The testimonial content. Use blank lines between paragraphs."
+
+  # ========================================
+  # PAGES
+  # Edit content on each site page
+  # ========================================
+  - name: "pages"
+    label: "Pages"
+    icon: "description"
+    description: "Edit the main content pages of the site."
+    editor:
+      preview: false
+    files:
+      # --- Home Page ---
+      - name: "home"
+        label: "Home Page"
+        file: "index.html"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "home" }
+          - { label: "Page Title (SEO)", name: "title", widget: "string" }
+          - { label: "Meta Description", name: "description", widget: "text" }
+          - { label: "Keywords", name: "keywords", widget: "string", required: false }
+          - { label: "Page Content", name: "body", widget: "markdown" }
+
+      # --- About Page ---
+      - name: "about"
+        label: "About Me"
+        file: "about.html"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
+          - { label: "Page Title (SEO)", name: "title", widget: "string" }
+          - { label: "SEO Title", name: "seo_title", widget: "string", required: false }
+          - { label: "Meta Description", name: "description", widget: "text" }
+          - { label: "Keywords", name: "keywords", widget: "string", required: false }
+          - { label: "Page Content", name: "body", widget: "markdown" }
+
+      # --- Services Page ---
+      - name: "services"
+        label: "Services & Pricing"
+        file: "services.html"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "full" }
+          - { label: "Page Title (SEO)", name: "title", widget: "string" }
+          - { label: "Meta Description", name: "description", widget: "text" }
+          - { label: "Keywords", name: "keywords", widget: "string", required: false }
+          - { label: "Page Content", name: "body", widget: "markdown" }
+
+      # --- What is a Doula Page ---
+      - name: "what-is-a-doula"
+        label: "What is a Doula?"
+        file: "what-is-a-doula.html"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "page-with-sidebar" }
+          - { label: "Page Title (SEO)", name: "title", widget: "string" }
+          - { label: "Meta Description", name: "description", widget: "text" }
+          - { label: "Keywords", name: "keywords", widget: "string", required: false }
+          - { label: "Page Content", name: "body", widget: "markdown" }
+
+      # --- Facts Page ---
+      - name: "facts"
+        label: "Research & Facts"
+        file: "facts.html"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "page-with-sidebar" }
+          - { label: "Page Title (SEO)", name: "title", widget: "string" }
+          - { label: "Meta Description", name: "description", widget: "text" }
+          - { label: "Keywords", name: "keywords", widget: "string", required: false }
+          - { label: "Page Content", name: "body", widget: "markdown" }
+
+      # --- FAQ Page ---
+      - name: "faq"
+        label: "FAQ"
+        file: "faq.html"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "full" }
+          - { label: "Page Title (SEO)", name: "title", widget: "string" }
+          - { label: "Meta Description", name: "description", widget: "text" }
+          - { label: "Keywords", name: "keywords", widget: "string", required: false }
+          - { label: "Page Content", name: "body", widget: "markdown" }
+
+      # --- Testimonials Page ---
+      - name: "testimonials"
+        label: "Testimonials Page Settings"
+        file: "testimonials.html"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "testimonials" }
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "SEO Title", name: "seo_title", widget: "string" }
+          - { label: "Meta Description", name: "description", widget: "text" }
+          - { label: "Keywords", name: "keywords", widget: "string", required: false }
+          - { label: "Lead Text", name: "lead", widget: "text", hint: "Intro paragraph shown below the title" }
+
+      # --- Contact Page ---
+      - name: "contact"
+        label: "Contact"
+        file: "contact.html"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "page-with-sidebar" }
+          - { label: "Page Title (SEO)", name: "title", widget: "string" }
+          - { label: "Meta Description", name: "description", widget: "text" }
+          - { label: "Keywords", name: "keywords", widget: "string", required: false }
+          - { label: "Page Content", name: "body", widget: "markdown" }

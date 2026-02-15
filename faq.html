@@ -1,755 +1,654 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  
-  <!-- Security headers for HTTPS -->
-  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-  
-  <!-- SEO Meta Tags -->
-  <title>Doula FAQ - Common Questions About Birth Doula Services | DoulaCare</title>
-  <meta name="description" content="Get answers to frequently asked questions about hiring a doula in Sussex & Surrey. Learn about costs, services, what doulas do, and how to choose the right doula.">
-  <meta name="keywords" content="doula FAQ, doula questions, doula cost, what does a doula do, hire a doula, doula vs midwife, birth doula questions">
-  <meta name="author" content="Laureen Eaton">
-  <meta name="robots" content="index, follow">
-  
-  <link rel="canonical" href="https://doulacare.net/faq.html">
-  
-  <!-- Favicons for all devices -->
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.svg">
-  <link rel="manifest" href="/manifest.json">
-  <link rel="icon" type="image/svg+xml" sizes="16x16" href="/favicon-16.svg">
-  
-  <!-- Stylesheets -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  
-  <!-- FAQ Schema Markup for Google -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What exactly does a doula do?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A doula provides continuous physical, emotional, and informational support to you and your partner before, during, and after birth. I help with comfort measures like massage and positioning, advocate for your wishes, explain what's happening, and ensure you feel supported throughout your journey. Unlike midwives, doulas don't provide medical care - we focus entirely on your wellbeing and experience."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How much does a doula cost?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "My Birth Package is £900 and includes antenatal sessions, continuous labour support, and postnatal visits. Birth preparation sessions are £160, postnatal support is £175, and birth pool hire is £75. I believe every family deserves doula support, so please contact me to discuss payment plans if needed."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What's the difference between a doula and a midwife?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Midwives provide medical care - they monitor your baby's health, check your vitals, deliver your baby, and handle any medical interventions. Doulas provide non-medical support - we focus on your comfort, emotions, and ensuring you feel informed and empowered. We work together as a team. You need a midwife for medical care, and a doula for continuous personal support."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do I need a doula if I have a partner?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Absolutely! Your partner is irreplaceable, but they may feel uncertain about how to help. I support your partner by showing them effective comfort techniques, explaining what's happening, and allowing them to take breaks without you being alone. Many partners say having a doula allowed them to be more present and enjoy the experience rather than feeling stressed or helpless."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "When should I book a doula?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ideally, book a doula in your second trimester (around 20-28 weeks) to ensure availability and allow time to build our relationship. However, I've supported families who contacted me just weeks before birth. If you're interested, reach out regardless of how far along you are - it's worth asking about availability."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you attend home births?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes! I have extensive experience supporting home births and can provide a birth pool for £75 if you'd like a water birth at home. I'm familiar with how home births work in our area and work well with community midwives."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I have a doula with an epidural or caesarean?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Absolutely! I support all types of births. With an epidural, I help with positioning, provide emotional support, and assist with other comfort measures. For caesareans (both planned and emergency), I can be with you in theatre if hospital policy allows, help with early breastfeeding, and provide crucial emotional support during a vulnerable time."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What areas do you cover?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "I'm based in Crawley, West Sussex and serve families across West Sussex, East Sussex, and Surrey. This includes Horsham, Haywards Heath, Worthing, Horley, and surrounding areas. I have experience at Worthing Hospital, East Surrey Hospital, Princess Royal Hospital Haywards Heath, and St Richard's Chichester."
-        }
-      }
-    ]
-  }
-  </script>
-  
-  <style>
-    /* FAQ specific styles */
-    .faq-container {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    
-    .faq-navigation {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-bottom: 2rem;
-      padding: 1.5rem;
-      background: var(--accent-color);
-      border-radius: var(--border-radius);
-      border-left: 4px solid var(--primary-color);
-    }
-    
-    .faq-nav-link {
-      color: var(--primary-dark);
-      text-decoration: none;
-      font-weight: 600;
-      padding: 0.5rem 1rem;
-      background: var(--white);
-      border-radius: var(--border-radius);
-      transition: var(--transition);
-      border: 2px solid var(--primary-light);
-    }
-    
-    .faq-nav-link:hover {
-      background: var(--primary-color);
-      color: var(--white);
-      border-color: var(--primary-color);
-      text-decoration: none;
-    }
-    
-    .faq-section {
-      margin-bottom: 3rem;
-    }
-    
-    .faq-section h2 {
-      color: var(--primary-dark);
-      border-bottom: 3px solid var(--primary-color);
-      padding-bottom: 0.5rem;
-      margin-bottom: 1.5rem;
-    }
-    
-    .faq-item {
-      margin-bottom: 1rem;
-      border: 2px solid var(--border-color);
-      border-radius: var(--border-radius);
-      overflow: hidden;
-      background: var(--white);
-      transition: var(--transition);
-    }
-    
-    .faq-item:hover {
-      border-color: var(--primary-color);
-      box-shadow: 0 2px 8px rgba(84, 214, 220, 0.15);
-    }
-    
-    .faq-question {
-      width: 100%;
-      text-align: left;
-      padding: 1.25rem;
-      background: var(--accent-color);
-      border: none;
-      font-size: 1.125rem;
-      font-weight: 600;
-      color: var(--text-dark);
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: var(--transition);
-    }
-    
-    .faq-question:hover {
-      background: var(--primary-light);
-    }
-    
-    .faq-question::after {
-      content: '+';
-      font-size: 1.5rem;
-      color: var(--primary-color);
-      font-weight: bold;
-      transition: transform 0.3s ease;
-    }
-    
-    .faq-question.active::after {
-      content: '−';
-      transform: rotate(180deg);
-    }
-    
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease, padding 0.3s ease;
-      background: var(--white);
-    }
-    
-    .faq-answer.active {
-      max-height: 500px;
-      padding: 1.25rem;
-      border-top: 2px solid var(--border-color);
-    }
-    
-    .faq-answer p {
-      margin-bottom: 0.75rem;
-    }
-    
-    .faq-answer p:last-child {
-      margin-bottom: 0;
-    }
-    
-    @media (max-width: 768px) {
-      .faq-navigation {
-        flex-direction: column;
-      }
-      
-      .faq-nav-link {
-        text-align: center;
-      }
-    }
-  </style>
-</head>
+---
+layout: full
+title: "Doula FAQ - Common Questions About Birth Doula Services | DoulaCare"
+seo_title: "Doula FAQ - Common Questions About Birth Doula Services | DoulaCare"
+description: "Get answers to frequently asked questions about hiring a doula in Sussex & Surrey. Learn about costs, services, what doulas do, and how to choose the right doula."
+keywords: "doula FAQ, doula questions, doula cost, what does a doula do, hire a doula, doula vs midwife, birth doula questions"
+---
 
-<body>
-  <a href="#main-content" class="skip-to-content">Skip to main content</a>
-  
-  <header class="site-header" role="banner">
-    <div class="header-container">
-      <div class="logo-container">
-        <a href="/" aria-label="DoulaCare Home">
-          <img src="images/doulacare_logo.svg" alt="DoulaCare logo with heart symbol" class="logo">
-        </a>
-      </div>
-      
-      <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-        ☰
-      </button>
-      
-      <nav class="main-nav" role="navigation" aria-label="Main navigation">
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="about.html">About Me</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="what-is-a-doula.html">What is a Doula?</a></li>
-          <li><a href="facts.html">Facts</a></li>
-          <li><a href="faq.html" aria-current="page">FAQ</a></li>
-          <li><a href="testimonials.html">Testimonials</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What exactly does a doula do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A doula provides continuous physical, emotional, and informational support to you and your partner before, during, and after birth. I help with comfort measures like massage and positioning, advocate for your wishes, explain what's happening, and ensure you feel supported throughout your journey. Unlike midwives, doulas don't provide medical care - we focus entirely on your wellbeing and experience."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does a doula cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "My Birth Package is £900 and includes antenatal sessions, continuous labour support, and postnatal visits. Birth preparation sessions are £160, postnatal support is £175, and birth pool hire is £75. I believe every family deserves doula support, so please contact me to discuss payment plans if needed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between a doula and a midwife?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Midwives provide medical care - they monitor your baby's health, check your vitals, deliver your baby, and handle any medical interventions. Doulas provide non-medical support - we focus on your comfort, emotions, and ensuring you feel informed and empowered. We work together as a team. You need a midwife for medical care, and a doula for continuous personal support."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a doula if I have a partner?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely! Your partner is irreplaceable, but they may feel uncertain about how to help. I support your partner by showing them effective comfort techniques, explaining what's happening, and allowing them to take breaks without you being alone. Many partners say having a doula allowed them to be more present and enjoy the experience rather than feeling stressed or helpless."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When should I book a doula?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ideally, book a doula in your second trimester (around 20-28 weeks) to ensure availability and allow time to build our relationship. However, I've supported families who contacted me just weeks before birth. If you're interested, reach out regardless of how far along you are - it's worth asking about availability."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you attend home births?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! I have extensive experience supporting home births and can provide a birth pool for £75 if you'd like a water birth at home. I'm familiar with how home births work in our area and work well with community midwives."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I have a doula with an epidural or caesarean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely! I support all types of births. With an epidural, I help with positioning, provide emotional support, and assist with other comfort measures. For caesareans (both planned and emergency), I can be with you in theatre if hospital policy allows, help with early breastfeeding, and provide crucial emotional support during a vulnerable time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What areas do you cover?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "I'm based in Crawley, West Sussex and serve families across West Sussex, East Sussex, and Surrey. This includes Horsham, Haywards Heath, Worthing, Horley, and surrounding areas. I have experience at Worthing Hospital, East Surrey Hospital, Princess Royal Hospital Haywards Heath, and St Richard's Chichester."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  /* FAQ specific styles */
+  .faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .faq-navigation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: var(--accent-color);
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--primary-color);
+  }
+
+  .faq-nav-link {
+    color: var(--primary-dark);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    background: var(--white);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    border: 2px solid var(--primary-light);
+  }
+
+  .faq-nav-link:hover {
+    background: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+    text-decoration: none;
+  }
+
+  .faq-section {
+    margin-bottom: 3rem;
+  }
+
+  .faq-section h2 {
+    color: var(--primary-dark);
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .faq-item {
+    margin-bottom: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    background: var(--white);
+    transition: var(--transition);
+  }
+
+  .faq-item:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 2px 8px rgba(84, 214, 220, 0.15);
+  }
+
+  .faq-question {
+    width: 100%;
+    text-align: left;
+    padding: 1.25rem;
+    background: var(--accent-color);
+    border: none;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition);
+  }
+
+  .faq-question:hover {
+    background: var(--primary-light);
+  }
+
+  .faq-question::after {
+    content: '+';
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    transition: transform 0.3s ease;
+  }
+
+  .faq-question.active::after {
+    content: '−';
+    transform: rotate(180deg);
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    background: var(--white);
+  }
+
+  .faq-answer.active {
+    max-height: 500px;
+    padding: 1.25rem;
+    border-top: 2px solid var(--border-color);
+  }
+
+  .faq-answer p {
+    margin-bottom: 0.75rem;
+  }
+
+  .faq-answer p:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 768px) {
+    .faq-navigation {
+      flex-direction: column;
+    }
+
+    .faq-nav-link {
+      text-align: center;
+    }
+  }
+</style>
+
+  <div class="container">
+    <div class="faq-container">
+
+      <h1>Frequently Asked Questions</h1>
+
+      <p class="lead">Got questions about hiring a doula? You're in the right place! Below are answers to the most common questions I receive. Can't find what you're looking for? <a href="/contact.html">Get in touch</a> - I'm happy to help!</p>
+
+      <!-- Quick Navigation -->
+      <nav class="faq-navigation" aria-label="FAQ sections">
+        <strong>Jump to:</strong>
+        <a href="#about-doulas" class="faq-nav-link">About Doulas</a>
+        <a href="#services-pricing" class="faq-nav-link">Services & Pricing</a>
+        <a href="#working-together" class="faq-nav-link">Working Together</a>
+        <a href="#logistics" class="faq-nav-link">Logistics</a>
       </nav>
-    </div>
-  </header>
-  
-  <main id="main-content" role="main">
-    <div class="container">
-      <div class="faq-container">
-        
-        <h1>Frequently Asked Questions</h1>
-        
-        <p class="lead">Got questions about hiring a doula? You're in the right place! Below are answers to the most common questions I receive. Can't find what you're looking for? <a href="contact.html">Get in touch</a> - I'm happy to help!</p>
-        
-        <!-- Quick Navigation -->
-        <nav class="faq-navigation" aria-label="FAQ sections">
-          <strong>Jump to:</strong>
-          <a href="#about-doulas" class="faq-nav-link">About Doulas</a>
-          <a href="#services-pricing" class="faq-nav-link">Services & Pricing</a>
-          <a href="#working-together" class="faq-nav-link">Working Together</a>
-          <a href="#logistics" class="faq-nav-link">Logistics</a>
-        </nav>
-        
-        <!-- About Doulas Section -->
-        <section id="about-doulas" class="faq-section">
-          <h2>About Doulas</h2>
-          
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              What exactly does a doula do?
-            </button>
-            <div class="faq-answer">
-              <p>A doula provides continuous physical, emotional, and informational support to you and your partner before, during, and after birth. I help with:</p>
-              <ul>
-                <li><strong>Physical comfort:</strong> Massage, positioning, breathing techniques, use of birth ball, rebozo, TENS machine, etc.</li>
-                <li><strong>Emotional support:</strong> Encouragement, reassurance, a calm presence, and helping you feel safe and confident</li>
-                <li><strong>Information:</strong> Explaining what's happening, discussing your options, helping you make informed decisions</li>
-                <li><strong>Partner support:</strong> Showing your partner how they can help, allowing them breaks, reducing their stress</li>
-                <li><strong>Advocacy:</strong> Ensuring your wishes are heard and respected</li>
-              </ul>
-              <p>Unlike midwives who provide medical care, doulas focus entirely on your wellbeing and experience. We don't perform medical tasks - we're there for YOU.</p>
-            </div>
+
+      <!-- About Doulas Section -->
+      <section id="about-doulas" class="faq-section">
+        <h2>About Doulas</h2>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            What exactly does a doula do?
+          </button>
+          <div class="faq-answer">
+            <p>A doula provides continuous physical, emotional, and informational support to you and your partner before, during, and after birth. I help with:</p>
+            <ul>
+              <li><strong>Physical comfort:</strong> Massage, positioning, breathing techniques, use of birth ball, rebozo, TENS machine, etc.</li>
+              <li><strong>Emotional support:</strong> Encouragement, reassurance, a calm presence, and helping you feel safe and confident</li>
+              <li><strong>Information:</strong> Explaining what's happening, discussing your options, helping you make informed decisions</li>
+              <li><strong>Partner support:</strong> Showing your partner how they can help, allowing them breaks, reducing their stress</li>
+              <li><strong>Advocacy:</strong> Ensuring your wishes are heard and respected</li>
+            </ul>
+            <p>Unlike midwives who provide medical care, doulas focus entirely on your wellbeing and experience. We don't perform medical tasks - we're there for YOU.</p>
           </div>
-          
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              What's the difference between a doula and a midwife?
-            </button>
-            <div class="faq-answer">
-              <p><strong>Midwives</strong> provide medical care. They:</p>
-              <ul>
-                <li>Monitor your baby's heartbeat</li>
-                <li>Check your blood pressure and vitals</li>
-                <li>Perform vaginal examinations</li>
-                <li>Deliver your baby</li>
-                <li>Handle medical interventions if needed</li>
-                <li>Care for multiple women during their shift</li>
-              </ul>
-              <p><strong>Doulas</strong> provide non-medical support. We:</p>
-              <ul>
-                <li>Stay with YOU continuously throughout labour</li>
-                <li>Focus on your comfort and emotional needs</li>
-                <li>Never leave your side for shift changes</li>
-                <li>Provide techniques for coping with contractions</li>
-                <li>Support your birth partner</li>
-                <li>Help you understand your options</li>
-              </ul>
-              <p>We work together as a team! You need a midwife for medical care, and a doula for continuous personal support. Think of it this way: the midwife cares for your body and baby, while the doula cares for your experience and emotions.</p>
-            </div>
-          </div>
-          
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              Do I need a doula if I have a partner?
-            </button>
-            <div class="faq-answer">
-              <p>Absolutely! Your partner is irreplaceable - they love you and you love them. But labour is a unique and intense experience, and your partner may:</p>
-              <ul>
-                <li>Feel uncertain about how to help</li>
-                <li>Not know effective comfort techniques</li>
-                <li>Feel stressed or overwhelmed themselves</li>
-                <li>Need breaks for food, rest, or bathroom</li>
-                <li>Want support and guidance too</li>
-              </ul>
-              <p>With a doula, I:</p>
-              <ul>
-                <li>Show your partner effective massage and positioning techniques</li>
-                <li>Explain what's happening so they understand the process</li>
-                <li>Allow them to take breaks without you being alone</li>
-                <li>Support them emotionally too</li>
-                <li>Help them feel confident and involved</li>
-              </ul>
-              <p>Many partners tell me that having a doula allowed them to be more present and enjoy the birth rather than feeling stressed or helpless. Instead of replacing your partner, I empower them to support you better!</p>
-            </div>
-          </div>
-          
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              Will you make decisions for me?
-            </button>
-            <div class="faq-answer">
-              <p>No, never! Your birth, your choices. My role is to:</p>
-              <ul>
-                <li>Provide information about your options</li>
-                <li>Help you understand what healthcare providers are suggesting</li>
-                <li>Ensure you have time to ask questions</li>
-                <li>Support whatever decisions YOU make</li>
-              </ul>
-              <p>I'm here to ensure you feel informed and empowered to make your own choices. Whether you want an epidural, a home birth, a caesarean, or anything else - I support YOU and your decisions without judgment.</p>
-            </div>
-          </div>
-          
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              Do doulas only support natural births?
-            </button>
-            <div class="faq-answer">
-              <p>Not at all! I support ALL types of births:</p>
-              <ul>
-                <li><strong>Epidural births:</strong> I help with positioning, provide emotional support, and assist with comfort until you get your epidural</li>
-                <li><strong>Inductions:</strong> I help you stay comfortable during the induction process</li>
-                <li><strong>Caesareans:</strong> I can be with you in theatre (if hospital allows), help with early breastfeeding, and provide emotional support</li>
-                <li><strong>Home births:</strong> I have extensive home birth experience and can provide a birth pool</li>
-                <li><strong>Water births:</strong> In hospital or at home</li>
-                <li><strong>VBACs:</strong> Special support for vaginal birth after caesarean</li>
-              </ul>
-              <p>Whatever type of birth you plan or end up having, I'm there to support YOU. Your comfort and wellbeing matter in every scenario.</p>
-            </div>
-          </div>
-        </section>
-        
-        <!-- Services & Pricing Section -->
-        <section id="services-pricing" class="faq-section">
-          <h2>Services & Pricing</h2>
-          
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              How much does a doula cost?
-            </button>
-            <div class="faq-answer">
-              <p>My fees are:</p>
-              <ul>
-                <li><strong>Complete Birth Package: £900</strong> - Includes antenatal sessions, on-call availability from 37 weeks, continuous labour support, and postnatal visits</li>
-                <li><strong>Birth Preparation Sessions: £160</strong> - Antenatal education and preparation without birth attendance</li>
-                <li><strong>Postnatal Support: £175 per session</strong> - Help with baby care, breastfeeding, and household tasks</li>
-                <li><strong>Birth Pool Hire: £75</strong> - Professional birth pool for home water births</li>
-              </ul>
-              <p>I believe every family deserves doula support. If finances are a concern, please contact me to discuss payment plans or flexible options. Don't let cost prevent you from reaching out!</p>
-            </div>
-          </div>
-          
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              What's included in your birth package?
-            </button>
-            <div class="faq-answer">
-              <p>The £900 Complete Birth Package includes:</p>
-              <p><strong>Before Birth:</strong></p>
-              <ul>
-                <li>Initial consultation meeting (free)</li>
-                <li>2-3 antenatal sessions (2-3 hours each) in your home</li>
-                <li>Birth plan discussion and preparation</li>
-                <li>Unlimited phone/email support</li>
-                <li>Loan of books and resources</li>
-                <li>On-call availability from 37 weeks</li>
-              </ul>
-              <p><strong>During Birth:</strong></p>
-              <ul>
-                <li>Continuous support throughout active labour</li>
-                <li>Comfort measures (massage, positioning, breathing)</li>
-                <li>Support for your birth partner</li>
-                <li>Advocacy for your wishes</li>
-                <li>Support at home, hospital, or birth centre</li>
-                <li>Birth photography (if you'd like)</li>
-              </ul>
-              <p><strong>After Birth:</strong></p>
-              <ul>
-                <li>2-3 postnatal visits in your home</li>
-                <li>Breastfeeding support</li>
-                <li>Birth story discussion</li>
-                <li>Continued support as needed</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              Do you offer payment plans?
-            </button>
-            <div class="faq-answer">
-              <p>Yes! I'm flexible with payment because I want doula support to be accessible. Options include:</p>
-              <ul>
-                <li>Monthly instalments from booking until birth</li>
-                <li>Deposit at booking, remainder before 37 weeks</li>
-                <li>Custom plans based on your situation</li>
-              </ul>
-              <p>We can discuss what works best for your family during our initial consultation. Please don't hesitate to ask - I want to make this work for you!</p>
-            </div>
-          </div>
-          
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              When should I book a doula?
-            </button>
-            <div class="faq-answer">
-              <p><strong>Ideal timing:</strong> Second trimester (around 20-28 weeks) gives us plenty of time to build our relationship and ensures I'm available.</p>
-              <p><strong>But don't worry if you're further along!</strong> I've supported families who contacted me:</p>
-              <ul>
-                <li>In their third trimester</li>
-                <li>Just weeks before their due date</li>
-                <li>Even in early labour!</li>
-              </ul>
-              <p>If you're interested in doula support, reach out regardless of how far along you are. The worst I can say is that I'm already booked, but I may know other excellent doulas who are available.</p>
-            </div>
-          </div>
-          
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              Is the initial consultation free?
-            </button>
-            <div class="faq-answer">
-              <p>Yes! The initial consultation is completely free with no obligation. This gives us a chance to:</p>
-              <ul>
-                <li>Meet each other and see if we're a good fit</li>
-                <li>Discuss your hopes and concerns about birth</li>
-                <li>Talk about how I can support you</li>
-                <li>Answer all your questions</li>
-                <li>Go over services and pricing</li>
-              </ul>
-              <p>Choosing a doula is a very personal decision, and it's important that you feel comfortable with me. There's no pressure to commit - just a friendly chat about your birth!</p>
-            </div>
-          </div>
-        </section>
-        
-        <!-- Working Together Section -->
-        <section id="working-together" class="faq-section">
-          <h2>Working Together</h2>
-          
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              How many prenatal sessions do we have?
-            </button>
-            <div class="faq-answer">
-              <p>Typically 2-3 sessions, each lasting 2-3 hours, in the comfort of your home. We cover:</p>
-              <p><strong>Session 1:</strong></p>
-              <ul>
-                <li>How labour works and what to expect</li>
-                <li>Comfort measures and coping techniques</li>
-                <li>Breathing and relaxation exercises</li>
-                <li>Positions for labour and birth</li>
-              </ul>
-              <p><strong>Session 2:</strong></p>
-              <ul>
-                <li>Partner's role and how they can help</li>
-                <li>Birth plan discussion</li>
-                <li>What to pack for hospital/prepare for home birth</li>
-                <li>When to call me and when to go to hospital</li>
-              </ul>
-              <p><strong>Session 3 (if needed):</strong></p>
-              <ul>
-                <li>Early breastfeeding</li>
-                <li>Newborn care basics</li>
-                <li>Postpartum preparation</li>
-                <li>Final questions and preparation</li>
-              </ul>
-              <p>We can adjust the number and content based on your specific needs and whether this is your first baby.</p>
-            </div>
-          </div>
-          
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              Are you on call 24/7 from 37 weeks?
-            </button>
-            <div class="faq-answer">
-              <p>Yes! From 37 weeks until your baby is born, I'm on call for you day and night. This means:</p>
-              <ul>
-                <li>My phone is always on and within reach</li>
-                <li>I can be contacted anytime, any day</li>
-                <li>I stay within reasonable distance of your area</li>
-                <li>I don't travel far or take holidays</li>
-                <li>I'm ready to come when you need me</li>
-              </ul>
-              <p>You can call or text me when contractions start, if your waters break, or if you just need reassurance. I'll talk you through early labour and let you know when I should come.</p>
-            </div>
-          </div>
-          
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              What if I go into labour when you're with another client?
-            </button>
-            <div class="faq-answer">
-              <p>This is rare because I carefully limit the number of clients I take each month to avoid due date overlaps. However, if it happens:</p>
-              <ul>
-                <li>I have a backup doula who knows your birth plan</li>
-                <li>You'll meet them during pregnancy</li>
-                <li>They're highly experienced and qualified</li>
-                <li>I'll join you as soon as I'm able</li>
-              </ul>
-              <p>In over 10 years, I've rarely had to use a backup, but it's important to have this safety net for your peace of mind.</p>
-            </div>
-          </div>
-          
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              What happens if I don't go into labour on my due date?
-            </button>
-            <div class="faq-answer">
-              <p>I remain on call! Most babies come within 2 weeks either side of the due date, and I'm available throughout this window. Whether you go at 37 weeks or 42 weeks, I'll be there.</p>
-              <p>If your pregnancy goes beyond 41-42 weeks and you need an induction, I support you through that too. We'll discuss your options and I'll be with you during the induction process.</p>
-            </div>
-          </div>
-          
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              Can I change my birth plan during labour?
-            </button>
-            <div class="faq-answer">
-              <p>Of course! Birth plans are guidelines, not contracts. Labour is unpredictable, and you might:</p>
-              <ul>
-                <li>Decide you want pain relief when you didn't plan to</li>
-                <li>Need medical interventions you didn't expect</li>
-                <li>Change your mind about positions or preferences</li>
-              </ul>
-              <p>My job is to support YOUR choices in the moment, whatever they are. If you want to change your mind about anything, that's completely okay. I'm here to support you, not your birth plan!</p>
-            </div>
-          </div>
-        </section>
-        
-        <!-- Logistics Section -->
-        <section id="logistics" class="faq-section">
-          <h2>Logistics</h2>
-          
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              What areas do you cover?
-            </button>
-            <div class="faq-answer">
-              <p>I'm based in Crawley, West Sussex and serve families across:</p>
-              <ul>
-                <li><strong>West Sussex:</strong> Crawley, Horsham, Haywards Heath, Worthing, and surrounding areas</li>
-                <li><strong>East Sussex:</strong> Parts of East Sussex</li>
-                <li><strong>Surrey:</strong> Horley, Reigate, and nearby areas</li>
-              </ul>
-              <p>If you're outside these areas, please still contact me - I may be able to help or recommend another doula.</p>
-            </div>
-          </div>
-          
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              Do you work with all hospitals in the area?
-            </button>
-            <div class="faq-answer">
-              <p>Yes! I have experience supporting births at:</p>
-              <ul>
-                <li>Worthing Hospital</li>
-                <li>East Surrey Hospital (Redhill)</li>
-                <li>Princess Royal Hospital (Haywards Heath)</li>
-                <li>St Richard's Hospital (Chichester)</li>
-              </ul>
-              <p>I'm familiar with each hospital's facilities, policies, and layout. I also know many of the local midwives and have good working relationships with hospital staff.</p>
-              <p>Planning to birth at a different hospital? No problem - I'm happy to support you there too!</p>
-            </div>
-          </div>
-          
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              Can I hire you if I'm planning a home birth?
-            </button>
-            <div class="faq-answer">
-              <p>Absolutely! I have extensive home birth experience and love supporting families who choose to birth at home. I can:</p>
-              <ul>
-                <li>Provide a professional birth pool (£75 hire)</li>
-                <li>Help set up your birth space</li>
-                <li>Work with your community midwives</li>
-                <li>Support you if transfer to hospital becomes necessary</li>
-              </ul>
-              <p>Home births are beautiful and I'm experienced in supporting them throughout our area.</p>
-            </div>
-          </div>
-          
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              What if I need to transfer from home to hospital?
-            </button>
-            <div class="faq-answer">
-              <p>I come with you! If you plan a home birth but need to transfer to hospital, I:</p>
-              <ul>
-                <li>Accompany you in the ambulance or car</li>
-                <li>Continue providing support at the hospital</li>
-                <li>Help you adjust to the change in environment</li>
-                <li>Ensure your wishes are still heard and respected</li>
-              </ul>
-              <p>Having a familiar face with you during an unexpected change can make a huge difference in how you feel about the experience.</p>
-            </div>
-          </div>
-          
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              Are you insured and DBS checked?
-            </button>
-            <div class="faq-answer">
-              <p>Yes! I have:</p>
-              <ul>
-                <li><strong>Full Professional Liability Insurance</strong></li>
-                <li><strong>Current DBS (CRB) Check</strong></li>
-                <li><strong>Certification from Nurturing Birth</strong></li>
-                <li><strong>Recognition from Doula UK</strong></li>
-                <li><strong>First Aid training</strong></li>
-                <li><strong>Regular continued professional development</strong></li>
-              </ul>
-              <p>I take my professional responsibilities seriously and maintain all required qualifications and certifications.</p>
-            </div>
-          </div>
-        </section>
-        
-        <!-- Call to Action -->
-        <div class="card mt-3">
-          <h3>Still Have Questions?</h3>
-          <p>Every birth is unique, and you may have questions specific to your situation. I'm here to help!</p>
-          <p class="text-center mt-2">
-            <a href="contact.html" class="btn">Book Your Free Consultation</a>
-          </p>
         </div>
-        
-      </div>
-    </div>
-  </main>
-  
-  <footer class="site-footer" role="contentinfo">
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3>Get in Touch</h3>
-        <p><strong>Phone:</strong> <a href="tel:01293541030">01293 541030</a></p>
-        <p><strong>Email:</strong> <a href="mailto:info@doulacare.net" class="email-link">ten.eracaluod@ofni</a></p>
-        <p><strong>Location:</strong> Crawley, West Sussex</p>
-      </div>
-      
-      <div class="footer-section">
-        <h3>Quick Links</h3>
-        <p><a href="about.html">About Laureen</a></p>
-        <p><a href="services.html">Services & Pricing</a></p>
-        <p><a href="what-is-a-doula.html">What is a Doula?</a></p>
-        <p><a href="facts.html">Birth Facts & Research</a></p>
-      </div>
-      
-      <div class="footer-section">
-        <h3>Professional Affiliations</h3>
-        <div class="footer-logos">
-          <img src="images/christian_fish.svg" alt="Christian faith symbol" title="Christian values">
-          <a href="https://doula.org.uk" target="_blank" rel="noopener noreferrer" aria-label="Doula UK - opens in new window">
-            <img src="images/doulauk.jpg" alt="Doula UK member logo">
-          </a>
-          <a href="https://www.nurturingbirth.co.uk" target="_blank" rel="noopener noreferrer" aria-label="Nurturing Birth - opens in new window">
-            <img src="images/logo.gif" alt="Nurturing Birth certified logo">
-          </a>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            What's the difference between a doula and a midwife?
+          </button>
+          <div class="faq-answer">
+            <p><strong>Midwives</strong> provide medical care. They:</p>
+            <ul>
+              <li>Monitor your baby's heartbeat</li>
+              <li>Check your blood pressure and vitals</li>
+              <li>Perform vaginal examinations</li>
+              <li>Deliver your baby</li>
+              <li>Handle medical interventions if needed</li>
+              <li>Care for multiple women during their shift</li>
+            </ul>
+            <p><strong>Doulas</strong> provide non-medical support. We:</p>
+            <ul>
+              <li>Stay with YOU continuously throughout labour</li>
+              <li>Focus on your comfort and emotional needs</li>
+              <li>Never leave your side for shift changes</li>
+              <li>Provide techniques for coping with contractions</li>
+              <li>Support your birth partner</li>
+              <li>Help you understand your options</li>
+            </ul>
+            <p>We work together as a team! You need a midwife for medical care, and a doula for continuous personal support. Think of it this way: the midwife cares for your body and baby, while the doula cares for your experience and emotions.</p>
+          </div>
         </div>
-        <p class="mt-1">Certified Birth Doula with Nurturing Birth</p>
-        <p>Recognised Doula with Doula UK</p>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Do I need a doula if I have a partner?
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely! Your partner is irreplaceable - they love you and you love them. But labour is a unique and intense experience, and your partner may:</p>
+            <ul>
+              <li>Feel uncertain about how to help</li>
+              <li>Not know effective comfort techniques</li>
+              <li>Feel stressed or overwhelmed themselves</li>
+              <li>Need breaks for food, rest, or bathroom</li>
+              <li>Want support and guidance too</li>
+            </ul>
+            <p>With a doula, I:</p>
+            <ul>
+              <li>Show your partner effective massage and positioning techniques</li>
+              <li>Explain what's happening so they understand the process</li>
+              <li>Allow them to take breaks without you being alone</li>
+              <li>Support them emotionally too</li>
+              <li>Help them feel confident and involved</li>
+            </ul>
+            <p>Many partners tell me that having a doula allowed them to be more present and enjoy the birth rather than feeling stressed or helpless. Instead of replacing your partner, I empower them to support you better!</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Will you make decisions for me?
+          </button>
+          <div class="faq-answer">
+            <p>No, never! Your birth, your choices. My role is to:</p>
+            <ul>
+              <li>Provide information about your options</li>
+              <li>Help you understand what healthcare providers are suggesting</li>
+              <li>Ensure you have time to ask questions</li>
+              <li>Support whatever decisions YOU make</li>
+            </ul>
+            <p>I'm here to ensure you feel informed and empowered to make your own choices. Whether you want an epidural, a home birth, a caesarean, or anything else - I support YOU and your decisions without judgment.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Do doulas only support natural births?
+          </button>
+          <div class="faq-answer">
+            <p>Not at all! I support ALL types of births:</p>
+            <ul>
+              <li><strong>Epidural births:</strong> I help with positioning, provide emotional support, and assist with comfort until you get your epidural</li>
+              <li><strong>Inductions:</strong> I help you stay comfortable during the induction process</li>
+              <li><strong>Caesareans:</strong> I can be with you in theatre (if hospital allows), help with early breastfeeding, and provide emotional support</li>
+              <li><strong>Home births:</strong> I have extensive home birth experience and can provide a birth pool</li>
+              <li><strong>Water births:</strong> In hospital or at home</li>
+              <li><strong>VBACs:</strong> Special support for vaginal birth after caesarean</li>
+            </ul>
+            <p>Whatever type of birth you plan or end up having, I'm there to support YOU. Your comfort and wellbeing matter in every scenario.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services & Pricing Section -->
+      <section id="services-pricing" class="faq-section">
+        <h2>Services & Pricing</h2>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            How much does a doula cost?
+          </button>
+          <div class="faq-answer">
+            <p>My fees are:</p>
+            <ul>
+              <li><strong>Complete Birth Package: £900</strong> - Includes antenatal sessions, on-call availability from 37 weeks, continuous labour support, and postnatal visits</li>
+              <li><strong>Birth Preparation Sessions: £160</strong> - Antenatal education and preparation without birth attendance</li>
+              <li><strong>Postnatal Support: £175 per session</strong> - Help with baby care, breastfeeding, and household tasks</li>
+              <li><strong>Birth Pool Hire: £75</strong> - Professional birth pool for home water births</li>
+            </ul>
+            <p>I believe every family deserves doula support. If finances are a concern, please contact me to discuss payment plans or flexible options. Don't let cost prevent you from reaching out!</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            What's included in your birth package?
+          </button>
+          <div class="faq-answer">
+            <p>The £900 Complete Birth Package includes:</p>
+            <p><strong>Before Birth:</strong></p>
+            <ul>
+              <li>Initial consultation meeting (free)</li>
+              <li>2-3 antenatal sessions (2-3 hours each) in your home</li>
+              <li>Birth plan discussion and preparation</li>
+              <li>Unlimited phone/email support</li>
+              <li>Loan of books and resources</li>
+              <li>On-call availability from 37 weeks</li>
+            </ul>
+            <p><strong>During Birth:</strong></p>
+            <ul>
+              <li>Continuous support throughout active labour</li>
+              <li>Comfort measures (massage, positioning, breathing)</li>
+              <li>Support for your birth partner</li>
+              <li>Advocacy for your wishes</li>
+              <li>Support at home, hospital, or birth centre</li>
+              <li>Birth photography (if you'd like)</li>
+            </ul>
+            <p><strong>After Birth:</strong></p>
+            <ul>
+              <li>2-3 postnatal visits in your home</li>
+              <li>Breastfeeding support</li>
+              <li>Birth story discussion</li>
+              <li>Continued support as needed</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Do you offer payment plans?
+          </button>
+          <div class="faq-answer">
+            <p>Yes! I'm flexible with payment because I want doula support to be accessible. Options include:</p>
+            <ul>
+              <li>Monthly instalments from booking until birth</li>
+              <li>Deposit at booking, remainder before 37 weeks</li>
+              <li>Custom plans based on your situation</li>
+            </ul>
+            <p>We can discuss what works best for your family during our initial consultation. Please don't hesitate to ask - I want to make this work for you!</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            When should I book a doula?
+          </button>
+          <div class="faq-answer">
+            <p><strong>Ideal timing:</strong> Second trimester (around 20-28 weeks) gives us plenty of time to build our relationship and ensures I'm available.</p>
+            <p><strong>But don't worry if you're further along!</strong> I've supported families who contacted me:</p>
+            <ul>
+              <li>In their third trimester</li>
+              <li>Just weeks before their due date</li>
+              <li>Even in early labour!</li>
+            </ul>
+            <p>If you're interested in doula support, reach out regardless of how far along you are. The worst I can say is that I'm already booked, but I may know other excellent doulas who are available.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Is the initial consultation free?
+          </button>
+          <div class="faq-answer">
+            <p>Yes! The initial consultation is completely free with no obligation. This gives us a chance to:</p>
+            <ul>
+              <li>Meet each other and see if we're a good fit</li>
+              <li>Discuss your hopes and concerns about birth</li>
+              <li>Talk about how I can support you</li>
+              <li>Answer all your questions</li>
+              <li>Go over services and pricing</li>
+            </ul>
+            <p>Choosing a doula is a very personal decision, and it's important that you feel comfortable with me. There's no pressure to commit - just a friendly chat about your birth!</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Working Together Section -->
+      <section id="working-together" class="faq-section">
+        <h2>Working Together</h2>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            How many prenatal sessions do we have?
+          </button>
+          <div class="faq-answer">
+            <p>Typically 2-3 sessions, each lasting 2-3 hours, in the comfort of your home. We cover:</p>
+            <p><strong>Session 1:</strong></p>
+            <ul>
+              <li>How labour works and what to expect</li>
+              <li>Comfort measures and coping techniques</li>
+              <li>Breathing and relaxation exercises</li>
+              <li>Positions for labour and birth</li>
+            </ul>
+            <p><strong>Session 2:</strong></p>
+            <ul>
+              <li>Partner's role and how they can help</li>
+              <li>Birth plan discussion</li>
+              <li>What to pack for hospital/prepare for home birth</li>
+              <li>When to call me and when to go to hospital</li>
+            </ul>
+            <p><strong>Session 3 (if needed):</strong></p>
+            <ul>
+              <li>Early breastfeeding</li>
+              <li>Newborn care basics</li>
+              <li>Postpartum preparation</li>
+              <li>Final questions and preparation</li>
+            </ul>
+            <p>We can adjust the number and content based on your specific needs and whether this is your first baby.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Are you on call 24/7 from 37 weeks?
+          </button>
+          <div class="faq-answer">
+            <p>Yes! From 37 weeks until your baby is born, I'm on call for you day and night. This means:</p>
+            <ul>
+              <li>My phone is always on and within reach</li>
+              <li>I can be contacted anytime, any day</li>
+              <li>I stay within reasonable distance of your area</li>
+              <li>I don't travel far or take holidays</li>
+              <li>I'm ready to come when you need me</li>
+            </ul>
+            <p>You can call or text me when contractions start, if your waters break, or if you just need reassurance. I'll talk you through early labour and let you know when I should come.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            What if I go into labour when you're with another client?
+          </button>
+          <div class="faq-answer">
+            <p>This is rare because I carefully limit the number of clients I take each month to avoid due date overlaps. However, if it happens:</p>
+            <ul>
+              <li>I have a backup doula who knows your birth plan</li>
+              <li>You'll meet them during pregnancy</li>
+              <li>They're highly experienced and qualified</li>
+              <li>I'll join you as soon as I'm able</li>
+            </ul>
+            <p>In over 10 years, I've rarely had to use a backup, but it's important to have this safety net for your peace of mind.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            What happens if I don't go into labour on my due date?
+          </button>
+          <div class="faq-answer">
+            <p>I remain on call! Most babies come within 2 weeks either side of the due date, and I'm available throughout this window. Whether you go at 37 weeks or 42 weeks, I'll be there.</p>
+            <p>If your pregnancy goes beyond 41-42 weeks and you need an induction, I support you through that too. We'll discuss your options and I'll be with you during the induction process.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Can I change my birth plan during labour?
+          </button>
+          <div class="faq-answer">
+            <p>Of course! Birth plans are guidelines, not contracts. Labour is unpredictable, and you might:</p>
+            <ul>
+              <li>Decide you want pain relief when you didn't plan to</li>
+              <li>Need medical interventions you didn't expect</li>
+              <li>Change your mind about positions or preferences</li>
+            </ul>
+            <p>My job is to support YOUR choices in the moment, whatever they are. If you want to change your mind about anything, that's completely okay. I'm here to support you, not your birth plan!</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Logistics Section -->
+      <section id="logistics" class="faq-section">
+        <h2>Logistics</h2>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            What areas do you cover?
+          </button>
+          <div class="faq-answer">
+            <p>I'm based in Crawley, West Sussex and serve families across:</p>
+            <ul>
+              <li><strong>West Sussex:</strong> Crawley, Horsham, Haywards Heath, Worthing, and surrounding areas</li>
+              <li><strong>East Sussex:</strong> Parts of East Sussex</li>
+              <li><strong>Surrey:</strong> Horley, Reigate, and nearby areas</li>
+            </ul>
+            <p>If you're outside these areas, please still contact me - I may be able to help or recommend another doula.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Do you work with all hospitals in the area?
+          </button>
+          <div class="faq-answer">
+            <p>Yes! I have experience supporting births at:</p>
+            <ul>
+              <li>Worthing Hospital</li>
+              <li>East Surrey Hospital (Redhill)</li>
+              <li>Princess Royal Hospital (Haywards Heath)</li>
+              <li>St Richard's Hospital (Chichester)</li>
+            </ul>
+            <p>I'm familiar with each hospital's facilities, policies, and layout. I also know many of the local midwives and have good working relationships with hospital staff.</p>
+            <p>Planning to birth at a different hospital? No problem - I'm happy to support you there too!</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Can I hire you if I'm planning a home birth?
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely! I have extensive home birth experience and love supporting families who choose to birth at home. I can:</p>
+            <ul>
+              <li>Provide a professional birth pool (£75 hire)</li>
+              <li>Help set up your birth space</li>
+              <li>Work with your community midwives</li>
+              <li>Support you if transfer to hospital becomes necessary</li>
+            </ul>
+            <p>Home births are beautiful and I'm experienced in supporting them throughout our area.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            What if I need to transfer from home to hospital?
+          </button>
+          <div class="faq-answer">
+            <p>I come with you! If you plan a home birth but need to transfer to hospital, I:</p>
+            <ul>
+              <li>Accompany you in the ambulance or car</li>
+              <li>Continue providing support at the hospital</li>
+              <li>Help you adjust to the change in environment</li>
+              <li>Ensure your wishes are still heard and respected</li>
+            </ul>
+            <p>Having a familiar face with you during an unexpected change can make a huge difference in how you feel about the experience.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Are you insured and DBS checked?
+          </button>
+          <div class="faq-answer">
+            <p>Yes! I have:</p>
+            <ul>
+              <li><strong>Full Professional Liability Insurance</strong></li>
+              <li><strong>Current DBS (CRB) Check</strong></li>
+              <li><strong>Certification from Nurturing Birth</strong></li>
+              <li><strong>Recognition from Doula UK</strong></li>
+              <li><strong>First Aid training</strong></li>
+              <li><strong>Regular continued professional development</strong></li>
+            </ul>
+            <p>I take my professional responsibilities seriously and maintain all required qualifications and certifications.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Call to Action -->
+      <div class="card mt-3">
+        <h3>Still Have Questions?</h3>
+        <p>Every birth is unique, and you may have questions specific to your situation. I'm here to help!</p>
+        <p class="text-center mt-2">
+          <a href="/contact.html" class="btn">Book Your Free Consultation</a>
+        </p>
       </div>
+
     </div>
-    
-    <div class="footer-bottom">
-      <p>&copy; 2026 DoulaCare | Laureen Eaton | All rights reserved</p>
-      <p>Supporting families in West Sussex, East Sussex, and Surrey</p>
-      <p><small>Website secured with SSL encryption</small></p>
-    </div>
-  </footer>
-  
-  <script src="js/main.js"></script>
-  
-  <script>
-    // FAQ accordion functionality
-    document.addEventListener('DOMContentLoaded', function() {
-      const questions = document.querySelectorAll('.faq-question');
-      
-      questions.forEach(question => {
-        question.addEventListener('click', function() {
-          const answer = this.nextElementSibling;
-          const isActive = this.classList.contains('active');
-          
-          // Close all other open FAQs
-          questions.forEach(q => {
-            q.classList.remove('active');
-            q.setAttribute('aria-expanded', 'false');
-            q.nextElementSibling.classList.remove('active');
-          });
-          
-          // Toggle current FAQ if it wasn't already open
-          if (!isActive) {
-            this.classList.add('active');
-            this.setAttribute('aria-expanded', 'true');
-            answer.classList.add('active');
-          }
+  </div>
+
+<script>
+  // FAQ accordion functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const questions = document.querySelectorAll('.faq-question');
+
+    questions.forEach(question => {
+      question.addEventListener('click', function() {
+        const answer = this.nextElementSibling;
+        const isActive = this.classList.contains('active');
+
+        // Close all other open FAQs
+        questions.forEach(q => {
+          q.classList.remove('active');
+          q.setAttribute('aria-expanded', 'false');
+          q.nextElementSibling.classList.remove('active');
         });
+
+        // Toggle current FAQ if it wasn't already open
+        if (!isActive) {
+          this.classList.add('active');
+          this.setAttribute('aria-expanded', 'true');
+          answer.classList.add('active');
+        }
       });
     });
-  </script>
-</body>
-</html>
+  });
+</script>
