@@ -1,16 +1,18 @@
+---
+---
 {
   "name": "DoulaCare - Birth Doula Services",
   "short_name": "DoulaCare",
   "description": "Professional birth doula services in Sussex & Surrey",
   "icons": [
     {
-      "src": "/favicon.svg",
+      "src": "{{ '/favicon.svg' | relative_url }}",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"
     },
     {
-      "src": "/apple-touch-icon.svg",
+      "src": "{{ '/apple-touch-icon.svg' | relative_url }}",
       "sizes": "180x180",
       "type": "image/svg+xml"
     }
@@ -18,6 +20,6 @@
   "theme_color": "#54d6dc",
   "background_color": "#ffffff",
   "display": "standalone",
-  "start_url": "/",
-  "scope": "/"
+  "start_url": "{{ '/' | relative_url }}",
+  "scope": "{{ '/' | relative_url }}"
 }

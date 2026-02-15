@@ -1,8 +1,8 @@
 <header class="site-header" role="banner">
   <div class="header-container">
     <div class="logo-container">
-      <a href="/" aria-label="DoulaCare Home">
-        <img src="/images/doulacare_logo.svg" alt="DoulaCare logo with heart symbol" class="logo">
+      <a href="{{ '/' | relative_url }}" aria-label="DoulaCare Home">
+        <img src="{{ '/images/doulacare_logo.svg' | relative_url }}" alt="DoulaCare logo with heart symbol" class="logo">
       </a>
     </div>
 
@@ -12,14 +12,14 @@
 
     <nav class="main-nav" role="navigation" aria-label="Main navigation">
       <ul>
-        <li><a href="/"{% if page.url == "/" %} aria-current="page"{% endif %}>Home</a></li>
-        <li><a href="/about.html"{% if page.url == "/about.html" %} aria-current="page"{% endif %}>About Me</a></li>
-        <li><a href="/services.html"{% if page.url == "/services.html" %} aria-current="page"{% endif %}>Services</a></li>
-        <li><a href="/what-is-a-doula.html"{% if page.url == "/what-is-a-doula.html" %} aria-current="page"{% endif %}>What is a Doula?</a></li>
-        <li><a href="/facts.html"{% if page.url == "/facts.html" %} aria-current="page"{% endif %}>Facts</a></li>
-        <li><a href="/faq.html"{% if page.url == "/faq.html" %} aria-current="page"{% endif %}>FAQ</a></li>
-        <li><a href="/testimonials.html"{% if page.url == "/testimonials.html" %} aria-current="page"{% endif %}>Testimonials</a></li>
-        <li><a href="/contact.html"{% if page.url == "/contact.html" %} aria-current="page"{% endif %}>Contact</a></li>
+        <li><a href="{{ '/' | relative_url }}"{% if page.url == "/" %} aria-current="page"{% endif %}>Home</a></li>
+        <li><a href="{{ '/about.html' | relative_url }}"{% if page.url == "/about.html" %} aria-current="page"{% endif %}>About Me</a></li>
+        <li><a href="{{ '/services.html' | relative_url }}"{% if page.url == "/services.html" %} aria-current="page"{% endif %}>Services</a></li>
+        <li><a href="{{ '/what-is-a-doula.html' | relative_url }}"{% if page.url == "/what-is-a-doula.html" %} aria-current="page"{% endif %}>What is a Doula?</a></li>
+        <li><a href="{{ '/facts.html' | relative_url }}"{% if page.url == "/facts.html" %} aria-current="page"{% endif %}>Facts</a></li>
+        <li><a href="{{ '/faq.html' | relative_url }}"{% if page.url == "/faq.html" %} aria-current="page"{% endif %}>FAQ</a></li>
+        <li><a href="{{ '/testimonials.html' | relative_url }}"{% if page.url == "/testimonials.html" %} aria-current="page"{% endif %}>Testimonials</a></li>
+        <li><a href="{{ '/contact.html' | relative_url }}"{% if page.url == "/contact.html" %} aria-current="page"{% endif %}>Contact</a></li>
       </ul>
     </nav>
   </div>
