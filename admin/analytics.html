@@ -1,0 +1,1006 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Analytics | DoulaCare</title>
+  <script src="https://accounts.google.com/gsi/client" async></script>
+  <style>
+    :root {
+      --primary: #54d6dc;
+      --primary-dark: #3ab5bc;
+      --primary-light: #a0e8ed;
+      --accent-bg: #f0f9fa;
+      --text-dark: #2c3e50;
+      --text-light: #5a6c7d;
+      --white: #ffffff;
+      --off-white: #fafafa;
+      --border: #d5e9eb;
+      --font-headings: 'Playfair Display', Georgia, serif;
+      --font-body: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --radius: 8px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--off-white);
+      color: var(--text-dark);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .top-bar {
+      background: var(--white);
+      border-bottom: 2px solid var(--border);
+      padding: 0 1.5rem;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .top-bar h1 {
+      font-family: var(--font-headings);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    .top-bar-links {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .top-bar-links a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .top-bar-links a:hover { color: var(--primary-dark); }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    /* Auth screen */
+    .auth-screen {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: calc(100vh - 60px);
+      gap: 1.5rem;
+      text-align: center;
+    }
+
+    .auth-screen h2 {
+      font-family: var(--font-headings);
+      font-size: 2rem;
+      color: var(--text-dark);
+    }
+
+    .auth-screen p {
+      color: var(--text-light);
+      max-width: 400px;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(84, 214, 220, 0.35);
+    }
+
+    .btn-small {
+      padding: 0.35rem 0.8rem;
+      font-size: 0.8rem;
+      border-radius: 6px;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-light);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary-dark);
+    }
+
+    /* Dashboard header */
+    .dash-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .dash-header h2 {
+      font-family: var(--font-headings);
+      font-size: 1.6rem;
+    }
+
+    .date-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .date-controls input[type="date"] {
+      background: var(--white);
+      border: 1px solid var(--border);
+      color: var(--text-dark);
+      padding: 0.5rem 0.75rem;
+      border-radius: 6px;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+    }
+
+    .preset-btns {
+      display: flex;
+      gap: 0.4rem;
+    }
+
+    .preset-btn {
+      background: var(--white);
+      border: 1px solid var(--border);
+      color: var(--text-light);
+      padding: 0.35rem 0.7rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: var(--font-body);
+    }
+
+    .preset-btn:hover, .preset-btn.active {
+      border-color: var(--primary);
+      color: var(--primary-dark);
+      background: var(--accent-bg);
+    }
+
+    /* Realtime section */
+    .realtime-section {
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .realtime-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .realtime-header h2 {
+      font-family: var(--font-headings);
+      font-size: 1.3rem;
+    }
+
+    .live-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #2ecc71;
+      box-shadow: 0 0 8px rgba(46, 204, 113, 0.5);
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; box-shadow: 0 0 8px rgba(46, 204, 113, 0.5); }
+      50% { opacity: 0.5; box-shadow: 0 0 16px rgba(46, 204, 113, 0.25); }
+    }
+
+    .realtime-updated {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      margin-left: auto;
+    }
+
+    .realtime-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .realtime-stat {
+      background: var(--white);
+      border: 1px solid rgba(46, 204, 113, 0.2);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+    }
+
+    .realtime-stat .label {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.35rem;
+    }
+
+    .realtime-stat .value {
+      font-family: var(--font-headings);
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #2ecc71;
+    }
+
+    .realtime-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    @media (max-width: 768px) {
+      .realtime-grid { grid-template-columns: 1fr; }
+    }
+
+    .realtime-panel {
+      background: var(--white);
+      border: 1px solid rgba(46, 204, 113, 0.15);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .realtime-panel .panel-header {
+      border-bottom-color: rgba(46, 204, 113, 0.15);
+    }
+
+    /* Stat cards */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .stat-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+    }
+
+    .stat-card .label {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-card .value {
+      font-family: var(--font-headings);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    /* Tables */
+    .data-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .data-grid { grid-template-columns: 1fr; }
+    }
+
+    .data-panel {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .data-panel.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .panel-header {
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .data-table th {
+      text-align: left;
+      padding: 0.6rem 1.25rem;
+      font-size: 0.75rem;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .data-table td {
+      padding: 0.6rem 1.25rem;
+      font-size: 0.9rem;
+      border-bottom: 1px solid #f0f3f5;
+    }
+
+    .data-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .data-table .num {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      color: var(--primary-dark);
+      font-weight: 600;
+    }
+
+    .data-table .bar-cell {
+      width: 30%;
+    }
+
+    .mini-bar {
+      height: 6px;
+      border-radius: 3px;
+      background: var(--accent-bg);
+      overflow: hidden;
+    }
+
+    .mini-bar-fill {
+      height: 100%;
+      border-radius: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+    }
+
+    /* Loading & error */
+    .loading {
+      text-align: center;
+      padding: 3rem;
+      color: var(--text-light);
+    }
+
+    .spinner {
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      border: 3px solid var(--border);
+      border-top-color: var(--primary);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin-bottom: 1rem;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .error-msg {
+      background: #fff5f5;
+      border: 1px solid #feb2b2;
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      color: #c53030;
+      margin-bottom: 1.5rem;
+    }
+
+    .config-notice {
+      background: var(--accent-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .config-notice code {
+      background: rgba(84, 214, 220, 0.1);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.85em;
+    }
+
+    /* Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto:wght@400;500;700&display=swap');
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <h1>DoulaCare Analytics</h1>
+  <div class="top-bar-links">
+    <a href="{{ '/admin/' | relative_url }}">CMS</a>
+    <a href="{{ '/' | relative_url }}">View Site</a>
+    <button id="signOutBtn" class="btn btn-small btn-outline" style="display:none;" onclick="handleSignOut()">Sign Out</button>
+  </div>
+</div>
+
+<!-- Auth screen -->
+<div id="authScreen" class="auth-screen">
+  <h2>Analytics Dashboard</h2>
+  <p>Sign in with Google to view your GA4 analytics data. You must have access to the Google Analytics property.</p>
+  <button class="btn btn-primary" onclick="handleSignIn()">Sign in with Google</button>
+</div>
+
+<!-- Dashboard -->
+<div id="dashboard" class="container" style="display:none;">
+
+  <div class="dash-header">
+    <h2>Dashboard</h2>
+    <div class="date-controls">
+      <div class="preset-btns">
+        <button class="preset-btn" data-days="7" onclick="setPreset(7)">7 days</button>
+        <button class="preset-btn" data-days="14" onclick="setPreset(14)">14 days</button>
+        <button class="preset-btn" data-days="30" onclick="setPreset(30)">30 days</button>
+        <button class="preset-btn" data-days="90" onclick="setPreset(90)">90 days</button>
+      </div>
+      <input type="date" id="startDate" onchange="fetchAll()" />
+      <span style="color:var(--text-light);">to</span>
+      <input type="date" id="endDate" onchange="fetchAll()" />
+    </div>
+  </div>
+
+  <div id="configNotice" class="config-notice" style="display:none;">
+    You need to configure your <code>PROPERTY_ID</code> and <code>CLIENT_ID</code> in this file. See the setup instructions.
+  </div>
+
+  <div id="errorBox" class="error-msg" style="display:none;"></div>
+
+  <!-- Realtime -->
+  <div class="realtime-section">
+    <div class="realtime-header">
+      <div class="live-dot"></div>
+      <h2>Realtime</h2>
+      <span class="realtime-updated" id="realtimeUpdated"></span>
+    </div>
+
+    <div class="realtime-stats">
+      <div class="realtime-stat">
+        <div class="label">Active Users</div>
+        <div class="value" id="rtActiveUsers">--</div>
+      </div>
+      <div class="realtime-stat">
+        <div class="label">Page Views (30 min)</div>
+        <div class="value" id="rtPageViews">--</div>
+      </div>
+      <div class="realtime-stat">
+        <div class="label">Events (30 min)</div>
+        <div class="value" id="rtEvents">--</div>
+      </div>
+    </div>
+
+    <div class="realtime-grid">
+      <div class="realtime-panel">
+        <div class="panel-header">Active Users by Country</div>
+        <div id="rtCountryTable"><div style="padding:1.5rem;color:var(--text-light);text-align:center;">Waiting for data...</div></div>
+      </div>
+      <div class="realtime-panel">
+        <div class="panel-header">Active Users by City</div>
+        <div id="rtCityTable"><div style="padding:1.5rem;color:var(--text-light);text-align:center;">Waiting for data...</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Summary stats -->
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="label">Total Visitors</div>
+      <div class="value" id="totalUsers">--</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Page Views</div>
+      <div class="value" id="totalPageviews">--</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Sessions</div>
+      <div class="value" id="totalSessions">--</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Avg. Session Duration</div>
+      <div class="value" id="avgDuration">--</div>
+    </div>
+  </div>
+
+  <!-- Location + Pages -->
+  <div class="data-grid">
+    <div class="data-panel">
+      <div class="panel-header">Visitors by Country</div>
+      <div id="countryTable" class="loading"><div class="spinner"></div><br/>Loading...</div>
+    </div>
+    <div class="data-panel">
+      <div class="panel-header">Visitors by City</div>
+      <div id="cityTable" class="loading"><div class="spinner"></div><br/>Loading...</div>
+    </div>
+  </div>
+
+  <div class="data-grid">
+    <div class="data-panel full-width">
+      <div class="panel-header">Popular Pages</div>
+      <div id="pagesTable" class="loading"><div class="spinner"></div><br/>Loading...</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ===================================================================
+  // CONFIGURATION — Replace these with your values
+  // ===================================================================
+  const CONFIG = {
+    PROPERTY_ID: 'YOUR_GA4_PROPERTY_ID',   // e.g. '123456789'
+    CLIENT_ID: 'YOUR_GOOGLE_CLIENT_ID',     // e.g. 'xxxx.apps.googleusercontent.com'
+  };
+  // ===================================================================
+
+  const SCOPES = 'https://www.googleapis.com/auth/analytics.readonly';
+  const API_BASE = 'https://analyticsdata.googleapis.com/v1beta';
+  const TOKEN_KEY = 'ga_doulacare_token';
+
+  let accessToken = null;
+  let tokenClient = null;
+  let refreshTimer = null;
+  let realtimeInterval = null;
+
+  // Token persistence
+  function saveToken(token, expiresIn) {
+    const data = {
+      token: token,
+      expiresAt: Date.now() + (expiresIn * 1000) - 60000,
+    };
+    localStorage.setItem(TOKEN_KEY, JSON.stringify(data));
+  }
+
+  function loadToken() {
+    try {
+      const raw = localStorage.getItem(TOKEN_KEY);
+      if (!raw) return null;
+      const data = JSON.parse(raw);
+      if (Date.now() > data.expiresAt) {
+        localStorage.removeItem(TOKEN_KEY);
+        return null;
+      }
+      return data;
+    } catch {
+      localStorage.removeItem(TOKEN_KEY);
+      return null;
+    }
+  }
+
+  function clearToken() {
+    localStorage.removeItem(TOKEN_KEY);
+    if (refreshTimer) clearTimeout(refreshTimer);
+  }
+
+  function scheduleRefresh(expiresAt) {
+    if (refreshTimer) clearTimeout(refreshTimer);
+    const delay = expiresAt - Date.now() - 120000;
+    if (delay > 0) {
+      refreshTimer = setTimeout(() => silentRefresh(), delay);
+    }
+  }
+
+  function silentRefresh() {
+    if (!tokenClient) initTokenClient();
+    tokenClient.requestAccessToken({ prompt: '' });
+  }
+
+  // Date helpers
+  function formatDate(d) {
+    return d.toISOString().split('T')[0];
+  }
+
+  function daysAgo(n) {
+    const d = new Date();
+    d.setDate(d.getDate() - n);
+    return d;
+  }
+
+  function initDates() {
+    const end = new Date();
+    const start = daysAgo(7);
+    document.getElementById('startDate').value = formatDate(start);
+    document.getElementById('endDate').value = formatDate(end);
+    highlightPreset(7);
+  }
+
+  function setPreset(days) {
+    document.getElementById('startDate').value = formatDate(daysAgo(days));
+    document.getElementById('endDate').value = formatDate(new Date());
+    highlightPreset(days);
+    fetchAll();
+  }
+
+  function highlightPreset(days) {
+    document.querySelectorAll('.preset-btn').forEach(b => {
+      b.classList.toggle('active', parseInt(b.dataset.days) === days);
+    });
+  }
+
+  // Auth
+  function initTokenClient() {
+    tokenClient = google.accounts.oauth2.initTokenClient({
+      client_id: CONFIG.CLIENT_ID,
+      scope: SCOPES,
+      callback: (resp) => {
+        if (resp.error) {
+          showError('Auth failed: ' + resp.error);
+          return;
+        }
+        accessToken = resp.access_token;
+        const expiresIn = resp.expires_in || 3600;
+        saveToken(accessToken, expiresIn);
+        const stored = loadToken();
+        if (stored) scheduleRefresh(stored.expiresAt);
+        showDashboard();
+      },
+    });
+  }
+
+  function handleSignIn() {
+    if (CONFIG.CLIENT_ID === 'YOUR_GOOGLE_CLIENT_ID') {
+      document.getElementById('configNotice').style.display = 'block';
+      document.getElementById('authScreen').style.display = 'none';
+      document.getElementById('dashboard').style.display = 'block';
+      return;
+    }
+
+    if (!tokenClient) initTokenClient();
+    tokenClient.requestAccessToken();
+  }
+
+  function handleSignOut() {
+    stopRealtimePolling();
+    if (accessToken) {
+      google.accounts.oauth2.revoke(accessToken);
+    }
+    accessToken = null;
+    clearToken();
+    document.getElementById('authScreen').style.display = 'flex';
+    document.getElementById('dashboard').style.display = 'none';
+    document.getElementById('signOutBtn').style.display = 'none';
+  }
+
+  function showDashboard() {
+    document.getElementById('authScreen').style.display = 'none';
+    document.getElementById('dashboard').style.display = 'block';
+    document.getElementById('signOutBtn').style.display = 'inline-flex';
+    initDates();
+    fetchAll();
+  }
+
+  function tryAutoLogin() {
+    const stored = loadToken();
+    if (stored) {
+      accessToken = stored.token;
+      scheduleRefresh(stored.expiresAt);
+      showDashboard();
+    }
+  }
+
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      if (typeof google !== 'undefined') initTokenClient();
+      tryAutoLogin();
+    }, 500);
+  });
+
+  function showError(msg) {
+    const box = document.getElementById('errorBox');
+    box.textContent = msg;
+    box.style.display = 'block';
+  }
+
+  function clearError() {
+    document.getElementById('errorBox').style.display = 'none';
+  }
+
+  // GA4 Data API
+  async function gaReport(body) {
+    const url = `${API_BASE}/properties/${CONFIG.PROPERTY_ID}:runReport`;
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${accessToken}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    });
+
+    if (res.status === 401) {
+      clearToken();
+      accessToken = null;
+      document.getElementById('authScreen').style.display = 'flex';
+      document.getElementById('dashboard').style.display = 'none';
+      document.getElementById('signOutBtn').style.display = 'none';
+      throw new Error('Session expired. Please sign in again.');
+    }
+
+    if (!res.ok) {
+      const err = await res.json();
+      throw new Error(err.error?.message || `API error ${res.status}`);
+    }
+
+    return res.json();
+  }
+
+  async function gaRealtimeReport(body) {
+    const url = `${API_BASE}/properties/${CONFIG.PROPERTY_ID}:runRealtimeReport`;
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${accessToken}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    });
+
+    if (res.status === 401) {
+      clearToken();
+      accessToken = null;
+      document.getElementById('authScreen').style.display = 'flex';
+      document.getElementById('dashboard').style.display = 'none';
+      document.getElementById('signOutBtn').style.display = 'none';
+      throw new Error('Session expired. Please sign in again.');
+    }
+
+    if (!res.ok) {
+      const err = await res.json();
+      throw new Error(err.error?.message || `API error ${res.status}`);
+    }
+
+    return res.json();
+  }
+
+  function getDateRange() {
+    return {
+      startDate: document.getElementById('startDate').value,
+      endDate: document.getElementById('endDate').value,
+    };
+  }
+
+  function fmtNum(n) {
+    return Number(n).toLocaleString();
+  }
+
+  function fmtDuration(seconds) {
+    const s = Math.round(Number(seconds));
+    if (s < 60) return s + 's';
+    const m = Math.floor(s / 60);
+    const rem = s % 60;
+    return m + 'm ' + rem + 's';
+  }
+
+  function buildTable(headers, rows, maxVal) {
+    if (!rows || rows.length === 0) {
+      return '<div style="padding:1.5rem;color:var(--text-light);text-align:center;">No data for this period</div>';
+    }
+
+    let html = '<table class="data-table"><thead><tr>';
+    headers.forEach(h => {
+      html += `<th${h.align === 'right' ? ' class="num"' : ''}>${h.label}</th>`;
+    });
+    html += '<th class="bar-cell"></th></tr></thead><tbody>';
+
+    rows.forEach(r => {
+      const val = Number(r.metricValues[0].value);
+      const pct = maxVal > 0 ? (val / maxVal) * 100 : 0;
+      html += '<tr>';
+      r.dimensionValues.forEach(d => {
+        html += `<td>${d.value === '(not set)' ? '<em style="color:var(--text-light)">(not set)</em>' : escapeHtml(d.value)}</td>`;
+      });
+      html += `<td class="num">${fmtNum(val)}</td>`;
+      html += `<td class="bar-cell"><div class="mini-bar"><div class="mini-bar-fill" style="width:${pct}%"></div></div></td>`;
+      html += '</tr>';
+    });
+
+    html += '</tbody></table>';
+    return html;
+  }
+
+  function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  // Realtime
+  async function fetchRealtime() {
+    if (!accessToken) return;
+
+    try {
+      const [summary, countries, cities] = await Promise.all([
+        gaRealtimeReport({
+          metrics: [
+            { name: 'activeUsers' },
+            { name: 'screenPageViews' },
+            { name: 'eventCount' },
+          ],
+        }),
+        gaRealtimeReport({
+          dimensions: [{ name: 'country' }],
+          metrics: [{ name: 'activeUsers' }],
+          orderBys: [{ metric: { metricName: 'activeUsers' }, desc: true }],
+          limit: 15,
+        }),
+        gaRealtimeReport({
+          dimensions: [{ name: 'city' }, { name: 'country' }],
+          metrics: [{ name: 'activeUsers' }],
+          orderBys: [{ metric: { metricName: 'activeUsers' }, desc: true }],
+          limit: 15,
+        }),
+      ]);
+
+      const vals = summary.rows?.[0]?.metricValues || [];
+      document.getElementById('rtActiveUsers').textContent = vals[0] ? fmtNum(vals[0].value) : '0';
+      document.getElementById('rtPageViews').textContent = vals[1] ? fmtNum(vals[1].value) : '0';
+      document.getElementById('rtEvents').textContent = vals[2] ? fmtNum(vals[2].value) : '0';
+
+      const countryRows = countries.rows || [];
+      const countryMax = countryRows.length > 0 ? Number(countryRows[0].metricValues[0].value) : 0;
+      document.getElementById('rtCountryTable').innerHTML = buildTable(
+        [{ label: 'Country' }, { label: 'Active', align: 'right' }],
+        countryRows, countryMax
+      );
+
+      const cityRows = cities.rows || [];
+      const cityMax = cityRows.length > 0 ? Number(cityRows[0].metricValues[0].value) : 0;
+      document.getElementById('rtCityTable').innerHTML = buildTable(
+        [{ label: 'City' }, { label: 'Country' }, { label: 'Active', align: 'right' }],
+        cityRows, cityMax
+      );
+
+      const now = new Date();
+      document.getElementById('realtimeUpdated').textContent =
+        'Updated ' + now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+
+    } catch (err) {
+      console.warn('Realtime fetch failed:', err.message);
+    }
+  }
+
+  function startRealtimePolling() {
+    fetchRealtime();
+    if (realtimeInterval) clearInterval(realtimeInterval);
+    realtimeInterval = setInterval(fetchRealtime, 60000);
+  }
+
+  function stopRealtimePolling() {
+    if (realtimeInterval) {
+      clearInterval(realtimeInterval);
+      realtimeInterval = null;
+    }
+  }
+
+  // Fetch all historical data
+  async function fetchAll() {
+    if (!accessToken) return;
+    clearError();
+
+    const range = getDateRange();
+    startRealtimePolling();
+
+    try {
+      await Promise.all([
+        fetchSummary(range),
+        fetchCountry(range),
+        fetchCity(range),
+        fetchPages(range),
+      ]);
+    } catch (err) {
+      showError(err.message);
+    }
+  }
+
+  async function fetchSummary(range) {
+    const data = await gaReport({
+      dateRanges: [range],
+      metrics: [
+        { name: 'totalUsers' },
+        { name: 'screenPageViews' },
+        { name: 'sessions' },
+        { name: 'averageSessionDuration' },
+      ],
+    });
+
+    const vals = data.rows?.[0]?.metricValues || [];
+    document.getElementById('totalUsers').textContent = vals[0] ? fmtNum(vals[0].value) : '0';
+    document.getElementById('totalPageviews').textContent = vals[1] ? fmtNum(vals[1].value) : '0';
+    document.getElementById('totalSessions').textContent = vals[2] ? fmtNum(vals[2].value) : '0';
+    document.getElementById('avgDuration').textContent = vals[3] ? fmtDuration(vals[3].value) : '0s';
+  }
+
+  async function fetchCountry(range) {
+    const data = await gaReport({
+      dateRanges: [range],
+      dimensions: [{ name: 'country' }],
+      metrics: [{ name: 'totalUsers' }],
+      orderBys: [{ metric: { metricName: 'totalUsers' }, desc: true }],
+      limit: 20,
+    });
+
+    const rows = data.rows || [];
+    const maxVal = rows.length > 0 ? Number(rows[0].metricValues[0].value) : 0;
+    document.getElementById('countryTable').innerHTML = buildTable(
+      [{ label: 'Country' }, { label: 'Visitors', align: 'right' }],
+      rows, maxVal
+    );
+  }
+
+  async function fetchCity(range) {
+    const data = await gaReport({
+      dateRanges: [range],
+      dimensions: [{ name: 'city' }, { name: 'region' }],
+      metrics: [{ name: 'totalUsers' }],
+      orderBys: [{ metric: { metricName: 'totalUsers' }, desc: true }],
+      limit: 20,
+    });
+
+    const rows = data.rows || [];
+    const maxVal = rows.length > 0 ? Number(rows[0].metricValues[0].value) : 0;
+    document.getElementById('cityTable').innerHTML = buildTable(
+      [{ label: 'City' }, { label: 'Region' }, { label: 'Visitors', align: 'right' }],
+      rows, maxVal
+    );
+  }
+
+  async function fetchPages(range) {
+    const data = await gaReport({
+      dateRanges: [range],
+      dimensions: [{ name: 'pagePath' }],
+      metrics: [{ name: 'screenPageViews' }],
+      orderBys: [{ metric: { metricName: 'screenPageViews' }, desc: true }],
+      limit: 30,
+    });
+
+    const rows = data.rows || [];
+    const maxVal = rows.length > 0 ? Number(rows[0].metricValues[0].value) : 0;
+    document.getElementById('pagesTable').innerHTML = buildTable(
+      [{ label: 'Page' }, { label: 'Views', align: 'right' }],
+      rows, maxVal
+    );
+  }
+</script>
+
+</body>
+</html>
