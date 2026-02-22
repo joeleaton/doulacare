@@ -1,8 +1,8 @@
 # DoulaCare Jekyll Configuration
 title: "DoulaCare"
 description: "Professional birth doula services in West Sussex, East Sussex & Surrey"
-url: "https://joeleaton.github.io"
-baseurl: "/doulacare"
+url: "https://doulacare.net"
+baseurl: ""
 
 # Site metadata
 author: "Laureen Eaton"
