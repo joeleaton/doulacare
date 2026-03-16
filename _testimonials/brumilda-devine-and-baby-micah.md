@@ -1,7 +1,7 @@
 ---
 name: Brumilda, Devine, and Baby Micah
 category: c-section
-image: ''
+image: /images/devine.jpg
 order: 4
 ---
 
